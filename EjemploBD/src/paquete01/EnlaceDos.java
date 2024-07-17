@@ -70,6 +70,10 @@ public class EnlaceDos {
             
             ResultSet rs = statement.executeQuery(data);
             while(rs.next()){
+                /* Lo que estamos haciendo es que en la tabla de la base de datos 
+                   tenemos el atributo nombre y el atributo poblacion los cuales 
+                   uno esta inicializado como tipo cadena y el otro como entero 
+                   por eso tenemos un getString y un getInt */
                 Ciudad miCiudad = new Ciudad(rs.getString("nombre"),
                 rs.getInt("poblacion"));
                 lista.add(miCiudad);

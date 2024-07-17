@@ -14,12 +14,18 @@ import paquete02.Ciudad;
  * @author reroes
  */
 public class Principal {
-    
+
     public static void main(String[] args) throws SQLException {
+
+        String[] Ciudades = {"Quito", "Guayaquil", "Manta", "Machala"};
+        int[] Poblaciones = {254000, 345000, 125001, 45300};
         Enlace c = new Enlace();
-        Ciudad ciudad = new Ciudad("Cuenca", 100123);
-        c.insertarCiudad(ciudad);
-        
+
+        for (int i = 0; i < Ciudades.length; i++) {
+            Ciudad ciudad = new Ciudad(Ciudades[i], Poblaciones[i]);
+            c.insertarCiudad(ciudad);
+        }
+
         for (int i = 0; i < c.obtenerDataCiudad().size(); i++) {
             System.out.printf("%s", c.obtenerDataCiudad().get(i));
         }
